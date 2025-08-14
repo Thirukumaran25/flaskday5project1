@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{ url_for('index') }}" class="btn btn-secondary mb-3">Back to All Products</a>
+
+<h2>In-Stock Products</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th><th>Price</th><th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>${{ product.price }}</td>
+            <td>{{ product.description }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
